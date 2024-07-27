@@ -9,6 +9,7 @@ const fileUpload = require("express-fileupload");
 app.use(
   fileUpload({
     useTempFiles: true,
+    tempFileDir: "/tmp/",
   })
 ); // Middleware to upload files
 
@@ -17,8 +18,6 @@ app.use(
 app.use("/api/v1", fileRoutes);
 
 const port = process.env.PORT || 5001;
-
-
 
 // Db connect
 
